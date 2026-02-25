@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from Animales.models import Animal, Encontrados, Perdidos, Favoritos
+from Animales.models import Animal, Encontrados, Perdidos, Favoritos, MascotaPersonal
 
 class AdoptadoSerializer(serializers.ModelSerializer):
     es_refugio_texto = serializers.SerializerMethodField()
@@ -71,3 +71,7 @@ class CrearAnimalSerializer(serializers.ModelSerializer):
         fields = ['nombre', 'duenyo', 'edad', 'localizacion', 'descripcion', 'categoria', 'raza', 'imagen',
                       'es_refugio']
 
+class MascotaPersonalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MascotaPersonal
+        fields = '__all__'
