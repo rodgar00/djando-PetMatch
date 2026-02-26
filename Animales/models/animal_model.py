@@ -181,7 +181,8 @@ class MascotaPersonal(models.Model):
     propietario = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='mascotas_personales'
+        null=True,  # <--- ESTO permite que la DB acepte vacíos
+        blank=True
     )
 
     fecha_creacion = models.DateTimeField(auto_now_add=True)

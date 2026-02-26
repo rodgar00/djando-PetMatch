@@ -74,4 +74,5 @@ class CrearAnimalSerializer(serializers.ModelSerializer):
 class MascotaPersonalSerializer(serializers.ModelSerializer):
     class Meta:
         model = MascotaPersonal
-        fields = ['nombre', 'edad', 'imagen', 'raza']
+        fields = ['id', 'nombre', 'edad', 'raza', 'imagen', 'propietario']
+        extra_kwargs = {'propietario': {'required': False, 'allow_null': True}}
