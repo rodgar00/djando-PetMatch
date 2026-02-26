@@ -173,9 +173,10 @@ class Favoritos(models.Model):
 
 class MascotaPersonal(models.Model):
     nombre = models.CharField(max_length=100)
-    raza = models.CharField(max_length=100, blank=True, null=True)
-    edad = models.IntegerField(blank=True, null=True)
-    foto = models.ImageField(upload_to='mascotas_personales/', blank=True, null=True)
+    edad = models.IntegerField()
+    raza = models.CharField(max_length=100)
+    # ¡Asegúrate de que esta línea exista!
+    imagen = models.ImageField(upload_to='mascotas/', null=True, blank=True)
 
     propietario = models.ForeignKey(
         settings.AUTH_USER_MODEL,

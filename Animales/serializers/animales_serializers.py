@@ -74,4 +74,4 @@ class CrearAnimalSerializer(serializers.ModelSerializer):
 class MascotaPersonalSerializer(serializers.ModelSerializer):
     class Meta:
         model = MascotaPersonal
-        fields = '__all__'
+        fields = ['nombre', 'edad', 'imagen', 'raza']

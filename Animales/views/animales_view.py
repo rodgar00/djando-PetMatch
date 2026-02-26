@@ -3,7 +3,10 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from Animales.models import Animal, Encontrados, Perdidos, Favoritos
-from Animales.serializers import AdoptadoSerializer, EncontradoSerializer, PerdidoSerializer, FavoritoSerializer
+from Animales.serializers import AdoptadoSerializer, EncontradoSerializer, PerdidoSerializer, FavoritoSerializer, MascotaPersonalSerializer
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
+from ..models.animal_model import MascotaPersonal
 
 class AdoptadoListAPIView(APIView):
     def get(self, request):
@@ -61,3 +64,8 @@ class FavoritoListAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class MascotaPersonalListAPIView(generics.ListCreateAPIView):
+    queryset = MascotaPersonal.objects.all()
+    serializer_class = MascotaPersonalSerializer
+    permission_class = [AllowAny]

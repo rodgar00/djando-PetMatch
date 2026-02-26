@@ -1,1 +1,1 @@
-from .animales_serializers import AdoptadoSerializer, EncontradoSerializer, PerdidoSerializer, FavoritoSerializer, CrearAnimalSerializer
+from .animales_serializers import AdoptadoSerializer, EncontradoSerializer, PerdidoSerializer, FavoritoSerializer, CrearAnimalSerializer, MascotaPersonalSerializer

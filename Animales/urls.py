@@ -10,7 +10,6 @@ urlpatterns = [
     path('favoritos/', FavoritoListAPIView.as_view(), name='favoritos-list'),
     path('crear_animal/', CrearAnimalAPIView.as_view(), name='crear_animal'),  # POST
     path('mascotas_personales/', MascotaPersonalListAPIView.as_view(), name='mascotas-personales'),
-
 ]
 
 
